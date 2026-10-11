@@ -50,7 +50,7 @@ document.querySelector("#stageContent").innerHTML=content[i]+`<div class="lesson
 document.querySelectorAll(".study-card").forEach((el,j)=>el.classList.toggle("selected",i===j));
 document.querySelectorAll(".quiz-option").forEach(btn=>btn.onclick=()=>{const ok=Number(btn.dataset.answer)===(rich?.question.answer??reading?.answer);const feedback=document.querySelector("#quizFeedback");feedback.textContent=ok?"✓ Correct! "+(rich?.question.explain||"Well done! / ¡Bien hecho!"):"Try again. / Inténtalo otra vez.";feedback.className=ok?"correct":"incorrect"});
 const show=document.querySelector("#showTranslation");if(show)show.onclick=()=>{const tr=document.querySelector(".story-translation");tr.hidden=!tr.hidden;show.textContent=tr.hidden?"🇪🇸 Mostrar traducción":"Ocultar traducción"};
-const detail=document.querySelector("#stageContent");detail.innerHTML=explainWords(detail.innerHTML);setupWordHelp();
+const detail=document.querySelector("#stageContent");detail.querySelectorAll(".reading-story p:not(.story-translation),.bilingual-example b,.simple-rule").forEach(el=>{el.innerHTML=explainWords(el.innerHTML)});setupWordHelp();
 document.querySelector("#markDone").onclick=()=>{done.add(i);try{localStorage.setItem(key,JSON.stringify([...done]))}catch{}updateProgress();renderStage(i)};
 document.querySelector("#nextStage").onclick=()=>renderStage(Math.min(i+1,6));
 };
