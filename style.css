@@ -77,3 +77,12 @@
 @keyframes poIdle{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-4px) rotate(2deg)}}
 @media(max-width:650px){.po-companion{width:86px;height:102px;bottom:8px}.po-companion-pet{width:76px;height:86px;left:5px}.po-companion-toggle{left:60px}.po-companion-bubble{bottom:85px;left:5px}.po-companion-hidden{width:auto;height:auto}}
 @media(prefers-reduced-motion:reduce){.po-companion,.po-companion-pet img{animation:none}}
+
+/* Po can be dragged without accidentally scrolling or tapping lesson content */
+.po-companion-pet{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.po-companion-pet:active{cursor:grabbing}
+.po-companion-pet img{-webkit-user-drag:none;user-select:none;pointer-events:none}
+.po-companion.po-manual-position{animation:none!important;transform:none!important;transition:none!important}
+.po-companion.po-manual-position .po-companion-pet img{animation:poIdle 4s ease-in-out infinite}
+.po-companion-hidden{top:auto!important;bottom:10px!important;left:10px!important}
+@media(prefers-reduced-motion:reduce){.po-companion.po-manual-position .po-companion-pet img{animation:none}}
