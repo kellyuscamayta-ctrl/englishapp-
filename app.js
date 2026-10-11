@@ -50,6 +50,7 @@ const lessonInfo={
 function lesson(title,crumb){
 if(typeof a1Activity==="function"&&a1Activity(title,crumb))return;
 if(typeof a1SkillLesson==="function"&&a1SkillLesson(title,crumb))return;
+if(typeof a1SkillLesson==="function"&&a1SkillLesson(title,crumb))return;
 const info=lessonInfo[title]||[`Learn the essentials of ${title} with clear examples and short activities.`,[`Let's practice ${title.toLowerCase()}.`,"Read, repeat, and make your own sentence."]];
 const stages=[["📖","Learn","Understand the topic","lilac"],["💡","Baby Mode","A super simple explanation","pink"],["✨","Examples","Explore real sentences","blue"],["✏️","Practice","Try short exercises","mint"],["💬","Use it","Make your own sentences","peach"],["🏆","Mini Test","Check your knowledge","violet"]];
 const isVocabulary=crumb.href.startsWith("vocabulary-block-");
