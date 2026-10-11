@@ -38,3 +38,15 @@
 .learn-reminder{background:#fff5e6;border:1px solid #f3e7d0;border-radius:17px;margin-top:25px;padding:21px;color:#685137}
 .learn-reminder p{line-height:1.6;margin-bottom:0}
 @media(max-width:650px){.learn-tiles{grid-template-columns:1fr}.learn-tile{padding:19px}.learn-intro{padding:20px}}
+
+.study-layout.sidebar-collapsed{grid-template-columns:minmax(0,1fr)!important}
+.study-layout.sidebar-collapsed .study-sidebar{display:none!important}
+.study-layout.sidebar-collapsed .study-main{min-width:0;width:100%;max-width:none}
+.study-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 19px}
+.sidebar-toggle{display:inline-flex;align-items:center;gap:10px;padding:11px 17px;border-radius:13px;background:#f1edff;color:#473d90;border:1px solid #ded6fa;cursor:pointer;font:inherit;font-weight:700;transition:background .2s}
+.sidebar-toggle:hover{background:#e8e0ff}
+.study-toolbar-label{color:#9a90bc;font-size:13px}
+.study-hero{overflow:hidden}
+.study-art{position:relative}
+.study-art:before{content:"";position:absolute;inset:-18px;border-radius:45% 55% 48% 52%;background:radial-gradient(circle at 30% 25%,#fff9 0 12%,transparent 13%),radial-gradient(circle at 80% 65%,#fff7 0 8%,transparent 9%);pointer-events:none}
+@media(max-width:760px){.study-toolbar-label{display:none}.study-toolbar{margin-top:10px}}
